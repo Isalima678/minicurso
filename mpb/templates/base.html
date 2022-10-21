@@ -1,0 +1,72 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<title>Gigatens do MPB</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto|Varela+Round">
+<link rel="stylesheet" href="{% static 'design/base/css/bootstrap.min.css' %}">
+<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+<script src="design/base/js/jquery-3.6.1.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+<link rel="stylesheet" type="text/css" href="{% static 'design/album/style.css' %}">
+<link rel="stylesheet" type="text/css" href="{% static 'design/base/style.css' %}">
+
+<script src="design/album/js.js"></script>
+
+<style>
+
+audio {
+    height : 25px;
+}
+
+
+
+</style>
+
+
+</head> 
+<body>
+<nav class="navbar navbar-expand-xl navbar-dark bg-dark">
+    <a href="#" class="navbar-brand"><i class="fa fa-music"></i>Gigantes<b>MPB</b></a>          
+    <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div id="navbarCollapse" class="collapse navbar-collapse justify-content-start">
+        <div class="navbar-nav">
+
+            <a href="{% url 'adicionar' %}" class="nav-item nav-link"><i class="fa fa-music"></i><span>Criar Musica</span></a>
+        </div>
+                
+        <form class="navbar-form form-inline">
+            <div class="input-group search-box">                                
+                <input type="text" id="search" class="form-control" placeholder="Pesquisar...">
+                <span class="input-group-addon"><i class="material-icons">&#xE8B6;</i></span>
+            </div>
+        </form>
+        <div class="navbar-nav ml-auto">
+
+            <a href="#" class="nav-item nav-link"><i class="fa fa-music"></i><span>Músicas</span></a>
+            <a href="#" class="nav-item nav-link"><i class="fa fa-picture-o"></i><span>Galeria</span></a>       
+            <a href="#" class="nav-item nav-link"><i class="fa fa-sign-out "></i><span>Minha Conta</span></a>
+
+        </div>
+    </div>
+</nav>
+
+{% block conteudo%}
+{% endblock %}
+
+
+<footer class="footer">
+  <div class="container">
+    <span class="text-muted">Gigantes do MPB. Todos os direitos reservados</span>
+  </div>
+</footer>
+
+</body>
+</html>

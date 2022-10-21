@@ -1,0 +1,54 @@
+{% extends 'base.html' %}
+
+
+{% block conteudo%}
+<div class="container-fluid">
+    <div class="table-responsive">
+        <div class="table-wrapper">			
+            <div class="table-title">
+                <div class="row">
+                    <div class="col-sm-6">
+                        <h2>Minhas <b>Músicas</b></h2>
+                    </div>
+                    <div class="col-sm-6">
+                        <div class="search-box">							
+                                 <a href="{% url 'adicionar' %}" type="button" class="btn btn-outline-light">Criar Musica</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>Titulo</th>
+                        <th>Artista</th>
+                        <th>Gênero</th>
+                        <th>Album</th>
+                        <th style="width: 22%;">Musica</th>
+                        <th>Ações</th>
+                    </tr>
+                </thead>
+                {% for dados in musicas %}
+                <tbody>
+                    <tr>
+                        <td>{{dados.id}}</td>
+                        <td>{{dados.titulo}}</td>
+                        <td>{{dados.artista}}</td>
+                        <td>{{dados.genero}}</td>
+                        <td>{{dados.album}}</td>
+                        <td><audio controls> <source src="{{dados.audio.url}}" type="audio/ogg"</audio></td>
+                        <td>
+                            <a href="{% url 'editar' dados.id %}" class="edit" title="Editar" data-toggle="tooltip"><i class="material-icons">&#xE254;</i></a>
+                            <a href="{% url 'deletar' dados.id %}" class="delete" title="Deletar" data-toggle="tooltip"><i class="material-icons">&#xE872;</i></a>
+                        </td>
+                    </tr>
+                </tbody>
+                {% endfor %}
+            </table>
+
+        </div>
+    </div>        
+</div>     
+
+{% endblock %}
